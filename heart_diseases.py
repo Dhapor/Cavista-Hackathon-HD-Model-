@@ -192,46 +192,48 @@ if selected_page == "Modeling":
     st.write(input_variables)
     
 # Assuming input_variables is your DataFrame with data to be transformed
+    
+    import pickle
+    import pandas as pd
+    
+    # Load the saved model and scalers
+    filename = 'labSca.sav'
+    with open(filename, 'rb') as file:
+        saved_data = pickle.load(file)
+    
+    label_encoders = saved_data['label_encoders']
+    scaler = saved_data['scaler']
+    columns_to_encode = saved_data['columns_to_encode']
+    columns_to_scale = saved_data['columns_to_scale']
 
-import pickle
-import pandas as pd
 
-# Load the saved model and scalers
-filename = 'labSca.sav'
-with open(filename, 'rb') as file:
-    saved_data = pickle.load(file)
-
-label_encoders = saved_data['label_encoders']
-scaler = saved_data['scaler']
-columns_to_encode = saved_data['columns_to_encode']
-columns_to_scale = saved_data['columns_to_scale']
-
-
-# Transform categorical columns using label encoders
-for col, encoder in label_encoders.items():
-    # Reorder input_variables columns to match the order used during fitting
-    input_variables = input_variables[columns_to_encode + columns_to_scale]
-    input_variables[col] = encoder.transform(input_variables[col])
-
-# Scale numerical columns using the saved scaler
-# input_variables[columns_to_scale] = scaler.transform(input_variables[columns_to_scale])
-
-# Now input_variables should be ready for prediction
-
+    # Transform categorical columns using label encoders
+    for col, encoder in label_encoders.items():
+        # Reorder input_variables columns to match the order used during fitting
+        input_variables = input_variables[columns_to_encode + columns_to_scale]
+        input_variables[col] = encoder.transform(input_variables[col])
+    
+    # Scale numerical columns using the saved scaler
+    # input_variables[columns_to_scale] = scaler.transform(input_variables[columns_to_scale])
+    
+    # Now input_variables should be ready for prediction
+    
 
 # st.write(input_variables)
 
 
-if st.button('Press To Predict'):
-    st.markdown("<h4 style = 'color: #2B2A4C; text-align: left; font-family: montserrat '>Model Report</h4>", unsafe_allow_html = True)
-    predicted = model.predict(input_variables)
-    st.toast('Predicted Successfully')
-    st.image('check icon.png', width = 100)
-    st.success(f'Model Predicted {int(np.round(predicted))}')
-    if predicted >= 0.5:
-        st.error('High risk of Heart Failure!')
-    else:
-        st.success('Low risk of diabHeart Failure.')
-
-st.markdown('<hr>', unsafe_allow_html=True)
+    if st.button('Press To Predict'):
+        st.markdown("<h4 style = 'color: #2B2A4C; text-align: left; font-family: montserrat '>Model Report</h4>", unsafe_allow_html = True)
+        predicted = model.predict(input_variables)
+        st.toast('Predicted Successfully')
+        st.image('check icon.png', width = 100)
+        st.success(f'Model Predicted {int(np.round(predicted))}')
+        if predicted >= 0.5:
+            st.error('High risk of Heart Failure!')
+        else:
+            st.success('Low risk of diabHeart Failure.')
+    
+    st.markdown('<hr>', unsafe_allow_html=True)
+    
+    st.markdown("<h8 style = 'color: #2B2A4C; text-align: LEFT; font-family:montserrat'>Heart Disease MODEL BUILT BY Pheau Snipers</h8>",unsafe_allow_html=True)
 
