@@ -147,8 +147,6 @@ def modeling_page():
     # st.sidebar.markdown('<br><br><br>', unsafe_allow_html= True)
     st.write(df[['Age', 'Sex', 'Cholesterol', 'MaxHR','ChestPainType', 'RestingBP', 'Oldpeak', 'ST_Slope', 'HeartDisease']])
 
-    # st.sidebar.image('pngwing.com (13).png', width = 300,  caption = 'customer and deliver agent info')
-
 
 
 if selected_page == "Home":
@@ -171,8 +169,6 @@ if selected_page == "Modeling":
     st.sidebar.markdown('<br>', unsafe_allow_html= True)
 
 
-# ['Age', 'Sex', 'Cholesterol', 'MaxHR', 'RestingBP', 'Oldpeak', 'ChestPainType', 'ST_Slope']
-
     input_variables = pd.DataFrame([{
         'Age': Age,
         'Sex':Sex,
@@ -184,8 +180,6 @@ if selected_page == "Modeling":
         'ChestPainType': ChestPainType,
         'ST_Slope': ST_Slope
     }])
-
-
 
 
     st.markdown("<h2 style='text-align: LEFT; color: #z2B2A4C;'>Your Input Appears Here</h2>", unsafe_allow_html=True)
@@ -213,13 +207,6 @@ if selected_page == "Modeling":
         input_variables = input_variables[columns_to_encode + columns_to_scale]
         input_variables[col] = encoder.transform(input_variables[col])
     
-    # Scale numerical columns using the saved scaler
-    # input_variables[columns_to_scale] = scaler.transform(input_variables[columns_to_scale])
-    
-    # Now input_variables should be ready for prediction
-    
-
-# st.write(input_variables)
 
 
     if st.button('Press To Predict'):
