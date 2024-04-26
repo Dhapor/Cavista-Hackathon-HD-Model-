@@ -219,7 +219,7 @@ for col, encoder in label_encoders.items():
 # Now input_variables should be ready for prediction
 
 
-st.write(input_variables)
+# st.write(input_variables)
 
 
 if st.button('Press To Predict'):
