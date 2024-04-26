@@ -163,10 +163,10 @@ def HomePage():
 # Function to define the modeling page content
 def modeling_page():
     st.markdown("<h1 style='text-align: LEFT; color: #2B2A4C;'>Dataset Sample</h1>", unsafe_allow_html=True)
-    # st.sidebar.markdown('<br><br><br>', unsafe_allow_html= True)
+    # st.sidebar.markdown('<br><br><br>', unsafe_allow_html=True)
     st.write(df[['Age', 'Sex', 'Cholesterol', 'MaxHR','ChestPainType', 'RestingBP', 'Oldpeak', 'ST_Slope', 'HeartDisease']])
 
-    # st.sidebar.image('pngwing.com (13).png', width = 300,  caption = 'customer and deliver agent info')
+    # st.sidebar.image('pngwing.com (13).png', width=300, caption='customer and deliver agent info')
 
 if selected_page == "Home":
     HomePage()
@@ -216,11 +216,10 @@ elif selected_page == "Modeling":
         input_variables[col] = encoder.transform(input_variables[col])
 
     # Now input_variables should be ready for prediction
-    st.write(input_variables)
 
     if st.button('Press To Predict'):
         st.markdown("<h4 style='color: #2B2A4C; text-align: left; font-family: montserrat'>Model Report</h4>", unsafe_allow_html=True)
-        predicted = model.predict(input_variables)
+        predicted = model.predict(input_variables.values)
         st.toast('Predicted Successfully')
         st.image('check icon.png', width=100)
         st.success(f'Model Predicted {int(np.round(predicted))}')
@@ -230,4 +229,3 @@ elif selected_page == "Modeling":
             st.success('Low risk of diabHeart Failure.')
 
 st.markdown('<hr>', unsafe_allow_html=True)
-
