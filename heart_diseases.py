@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-# import seaborn as sns
+import seaborn as sns
 import matplotlib.pyplot as plt
 import tensorflow as tf
 from sklearn.preprocessing import LabelEncoder
@@ -172,7 +172,8 @@ if selected_page == "Modeling":
 
 
 # ['Age', 'Sex', 'Cholesterol', 'MaxHR', 'RestingBP', 'Oldpeak', 'ChestPainType', 'ST_Slope']
-input_variables = pd.DataFrame([{
+
+    input_variables = pd.DataFrame([{
         'Age': Age,
         'Sex':Sex,
         'Cholesterol': Cholesterol,
@@ -187,8 +188,8 @@ input_variables = pd.DataFrame([{
 
 
 
-st.markdown("<h2 style='text-align: LEFT; color: #z2B2A4C;'>Your Input Appears Here</h2>", unsafe_allow_html=True)
-st.write(input_variables)
+    st.markdown("<h2 style='text-align: LEFT; color: #z2B2A4C;'>Your Input Appears Here</h2>", unsafe_allow_html=True)
+    st.write(input_variables)
     
 # Assuming input_variables is your DataFrame with data to be transformed
 
@@ -206,11 +207,11 @@ columns_to_encode = saved_data['columns_to_encode']
 columns_to_scale = saved_data['columns_to_scale']
 
 
-# # Transform categorical columns using label encoders
-# for col, encoder in label_encoders.items():
-#     # Reorder input_variables columns to match the order used during fitting
-#     input_variables = input_variables[columns_to_encode + columns_to_scale]
-#     input_variables[col] = encoder.transform(input_variables[col])
+# Transform categorical columns using label encoders
+for col, encoder in label_encoders.items():
+    # Reorder input_variables columns to match the order used during fitting
+    input_variables = input_variables[columns_to_encode + columns_to_scale]
+    input_variables[col] = encoder.transform(input_variables[col])
 
 # Scale numerical columns using the saved scaler
 # input_variables[columns_to_scale] = scaler.transform(input_variables[columns_to_scale])
@@ -233,3 +234,4 @@ if st.button('Press To Predict'):
         st.success('Low risk of diabHeart Failure.')
 
 st.markdown('<hr>', unsafe_allow_html=True)
+
