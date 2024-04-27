@@ -178,8 +178,9 @@ if selected_page == "Modeling":
     Oldpeak = st.sidebar.number_input("Oldpeak",  0.0, 10.0, format="%.1f")      
     ST_Slope = st.sidebar.selectbox("ST_Slope", df['ST_Slope'].unique())
     st.sidebar.markdown('<br>', unsafe_allow_html= True)
-
-    patient_name = st.text_input("Input Patient Name", value="", max_chars=None, key=None, type='default', help=None, placeholder=None, on_change=None, args=None, kwargs=None)
+    
+    st.markdown("<h2 style='text-align: LEFT; color: #z2B2A4C;'>Input Patient Name</h2>", unsafe_allow_html=True)
+    patient_name = st.text_input()
     
     input_variables = pd.DataFrame([{
         'Age': Age,
