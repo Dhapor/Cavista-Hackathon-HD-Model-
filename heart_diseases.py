@@ -180,7 +180,7 @@ if selected_page == "Modeling":
     st.sidebar.markdown('<br>', unsafe_allow_html= True)
     
     st.markdown("<h2 style='text-align: LEFT; color: #z2B2A4C;'>Input Patient Name</h2>", unsafe_allow_html=True)
-    patient_name = st.text_input()
+    patient_name = st.text_input("")
     
     input_variables = pd.DataFrame([{
         'Age': Age,
