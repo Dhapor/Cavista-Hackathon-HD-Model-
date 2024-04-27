@@ -179,7 +179,8 @@ if selected_page == "Modeling":
     ST_Slope = st.sidebar.selectbox("ST_Slope", df['ST_Slope'].unique())
     st.sidebar.markdown('<br>', unsafe_allow_html= True)
 
-
+    patient_name = st.text_input("Patient Name")
+    
     input_variables = pd.DataFrame([{
         'Age': Age,
         'Sex':Sex,
