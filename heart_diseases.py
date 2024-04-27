@@ -182,8 +182,6 @@ if selected_page == "Modeling":
     ST_Slope = st.sidebar.selectbox("ST_Slope", df['ST_Slope'].unique())
     st.sidebar.markdown('<br>', unsafe_allow_html= True)
     
-    st.markdown("<h2 style='text-align: LEFT; color: #z2B2A4C;'>Input Patient Name</h2>", unsafe_allow_html=True)
-    patient_name = st.text_input("")
     
     input_variables = pd.DataFrame([{
         'Age': Age,
@@ -223,6 +221,8 @@ if selected_page == "Modeling":
         input_variables = input_variables[columns_to_encode + columns_to_scale]
         input_variables[col] = encoder.transform(input_variables[col])
     
+    st.markdown("<h2 style='text-align: LEFT; color: #z2B2A4C;'>Input Patient Name</h2>", unsafe_allow_html=True)
+    patient_name = st.text_input("")
     
     if patient_name:
         if st.button('Press To Predict'):
