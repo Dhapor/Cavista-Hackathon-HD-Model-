@@ -220,17 +220,17 @@ if selected_page == "Modeling":
         input_variables[col] = encoder.transform(input_variables[col])
     
 
-
+    
     if st.button('Press To Predict'):
-        st.markdown("<h4 style = 'color: #2B2A4C; text-align: left; font-family: montserrat '>Model Report</h4>", unsafe_allow_html = True)
+        st.markdown("<h4 style='color: #2B2A4C; text-align: left; font-family: montserrat;'>Model Report</h4>", unsafe_allow_html=True)
         predicted = model.predict(input_variables)
         st.toast('Predicted Successfully')
-        st.image('check icon.png', width = 100)
-        st.success(f'Model Predicted {int(np.round(predicted))}')
+        st.image('check icon.png', width=100)
         if predicted >= 0.5:
-            st.error('High risk of Heart Failure!')
+            st.error(f"{patient_name} is at high risk of Lung Cancer!")
         else:
-            st.success('Low risk of diabHeart Failure.')
+            st.success(f"{patient_name} is at low risk of Lung Cancer.")
+
     
     st.markdown('<hr>', unsafe_allow_html=True)
     
