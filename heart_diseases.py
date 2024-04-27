@@ -138,15 +138,19 @@ def HomePage():
     st.markdown("<p>The Age field in the Heart Diseases Model denotes the individual's chronological age, a key factor in assessing heart disease risk. Age ranges from 28-77 in our dataset.</p>", unsafe_allow_html=True)
     st.markdown("<h5 style='color: #2B2A4C;text-align: left; font-family:montserrat'>Cholesterol </h3>", unsafe_allow_html=True)
     st.markdown("<p>Cholesterol is a type of fat that is found in your blood. It's essential for building cells and making certain hormones, but having too much cholesterol can be harmful, especially for your heart. Levels between 100-129 mg/dL are considered near optimal, while Levels above 160 mg/dL are considered high.</p>", unsafe_allow_html=True)
-    st.markdown("<h5 style='color: #2B2A4C;text-align: left; font-family:montserrat'>AMAXHR ge</h3>", unsafe_allow_html=True)
+    st.markdown("<h5 style='color: #2B2A4C;text-align: left; font-family:montserrat'>MAXHR </h3>", unsafe_allow_html=True)
     st.markdown("<p>MAXHR stands for Maximum Heart Rate. It refers to the highest heart rate an individual can achieve during physical exertion. MAXHR is an important metric in assessing cardiovascular health and fitness levels.</p>", unsafe_allow_html=True)
     st.markdown("<h5 style='color: #2B2A4C;text-align: left; font-family:montserrat'>Chest pain type</h3>", unsafe_allow_html=True)
     st.markdown("<p>Chest pain or discomfort caused when your heart muscle doesn't get enough oxygen-rich blood.</p>", unsafe_allow_html=True)
+     st.markdown("<h5 style='color: #2B2A4C;text-align: left; font-family:montserrat'>RestingBP</h3>", unsafe_allow_html=True)
+    st.markdown("<p>Resting blood pressure refers to the measurement of blood pressure when the body is at rest, typically in a seated or lying position and after a period of relaxation. Normal resting blood pressure typically falls below 120/80 mmHg</p>", unsafe_allow_html=True)
+    st.markdown("<h5 style='color: #2B2A4C;text-align: left; font-family:montserrat'>Oldpeak </h3>", unsafe_allow_html=True)
+    st.markdown("<p>Oldpeak is a term used when doctors are checking the heart's health. They might ask you to exercise on a treadmill or bike while they monitor your heart. They're looking for any unusual changes on a graph called an electrocardiogram (ECG). One thing they look for is if a part of the graph dips down (depression) when you're exercising compared to when you're resting. This dip is called Oldpeak. If there's a big dip, it could mean your heart isn't getting enough blood, which could signal a problem like blocked arteries.</p>", unsafe_allow_html=True)
 
    
 
     # Streamlit app footer
-    st.markdown("<p style='text-align: LEFT; font-size: 12px;'>Created with ❤️ by the Orpheus </p>", unsafe_allow_html=True)
+    st.markdown("<p style='text-align: LEFT; font-size: 12px;'>Created with ❤️ by the Orpheus Snipersat the Cavista Hackathon </p>", unsafe_allow_html=True)
 
 # Function to define the modeling page content
 def modeling_page():
