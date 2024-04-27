@@ -123,7 +123,7 @@ def HomePage():
     st.markdown('<br>', unsafe_allow_html= True)
     st.markdown("<h6 style = 'margin: -15px; color: #2B2A4C; text-align: center ; font-family:montserrat'>The Heart Failure Prediction Model is a machine learning algorithm designed to forecast the likelihood of heart failure in individuals based on various health-related factors. By analyzing features such as age, Sex, medical history, and lifestyle habits, the model provides valuable insights into the risk of heart failure, allowing for early intervention and preventive measures.</h6>",unsafe_allow_html=True)
     st.markdown('<br>', unsafe_allow_html= True)
-    st.image('2150941719.jpg', width=700, align="center")
+    st.image('2150941719.jpg', width=700)
     st.markdown('<br>', unsafe_allow_html= True)
 
 
