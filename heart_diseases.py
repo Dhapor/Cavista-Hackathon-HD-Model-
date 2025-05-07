@@ -119,9 +119,9 @@ selected_page = st.sidebar.radio('Navigation', ['Home', 'Modeling'])
 
 def HomePage():
     # Streamlit app header
-    st.markdown("<h1 style = 'color: #2B2A4C; text-align: center; font-family:montserrat'>Heart Failure Prediction Model</h1>",unsafe_allow_html=True)
+    st.markdown("<h1 style = ' text-align: center; font-family:montserrat'>Heart Failure Prediction Model</h1>",unsafe_allow_html=True)
     st.markdown('<br>', unsafe_allow_html= True)
-    st.markdown("<h6 style = 'margin: -15px; color: #2B2A4C; text-align: center ; font-family:montserrat'>The Heart Failure Prediction Model is a machine learning algorithm designed to forecast the likelihood of heart failure in individuals based on various health-related factors. By analyzing features such as age, Sex, medical history, and lifestyle habits, the model provides valuable insights into the risk of heart failure, allowing for early intervention and preventive measures.</h6>",unsafe_allow_html=True)
+    st.markdown("<h6 style = 'margin: -15px;  text-align: center ; font-family:montserrat'>The Heart Failure Prediction Model is a machine learning algorithm designed to forecast the likelihood of heart failure in individuals based on various health-related factors. By analyzing features such as age, Sex, medical history, and lifestyle habits, the model provides valuable insights into the risk of heart failure, allowing for early intervention and preventive measures.</h6>",unsafe_allow_html=True)
     st.markdown('<br>', unsafe_allow_html= True)
     st.image('2150941719.jpg', width=700)
     st.markdown('<br>', unsafe_allow_html= True)
@@ -130,21 +130,21 @@ def HomePage():
 
     st.markdown('<br>', unsafe_allow_html= True)
     st.markdown('<br>', unsafe_allow_html= True)
-    st.markdown("<h3 style='color: #2B2A4C;text-align: center; font-family:montserrat'>The Model Features</h3>", unsafe_allow_html=True)
-    st.markdown("<h5 style='color: #2B2A4C;text-align: left; font-family:montserrat'>Sex</h3>", unsafe_allow_html=True)
+    st.markdown("<h3 style='text-align: center; font-family:montserrat'>The Model Features</h3>", unsafe_allow_html=True)
+    st.markdown("<h5 style='text-align: left; font-family:montserrat'>Sex</h3>", unsafe_allow_html=True)
     st.markdown("<p>Sex refers to the biological sex of the individual, which can have an impact on their susceptibility to diabetes. There are three</p>", unsafe_allow_html=True)
     st.markdown('<br>', unsafe_allow_html= True)
-    st.markdown("<h5 style='color: #2B2A4C;text-align: left; font-family:montserrat'>Age</h3>", unsafe_allow_html=True)
+    st.markdown("<h5 style='text-align: left; font-family:montserrat'>Age</h3>", unsafe_allow_html=True)
     st.markdown("<p>The Age field in the Heart Diseases Model denotes the individual's chronological age, a key factor in assessing heart disease risk. Age ranges from 28-77 in our dataset.</p>", unsafe_allow_html=True)
-    st.markdown("<h5 style='color: #2B2A4C;text-align: left; font-family:montserrat'>Cholesterol </h3>", unsafe_allow_html=True)
+    st.markdown("<h5 style='text-align: left; font-family:montserrat'>Cholesterol </h3>", unsafe_allow_html=True)
     st.markdown("<p>Cholesterol is a type of fat that is found in your blood. It's essential for building cells and making certain hormones, but having too much cholesterol can be harmful, especially for your heart. Levels between 100-129 mg/dL are considered near optimal, while Levels above 160 mg/dL are considered high.</p>", unsafe_allow_html=True)
-    st.markdown("<h5 style='color: #2B2A4C;text-align: left; font-family:montserrat'>MAXHR </h3>", unsafe_allow_html=True)
+    st.markdown("<h5 style='text-align: left; font-family:montserrat'>MAXHR </h3>", unsafe_allow_html=True)
     st.markdown("<p>MAXHR stands for Maximum Heart Rate. It refers to the highest heart rate an individual can achieve during physical exertion. MAXHR is an important metric in assessing cardiovascular health and fitness levels.</p>", unsafe_allow_html=True)
-    st.markdown("<h5 style='color: #2B2A4C;text-align: left; font-family:montserrat'>Chest pain type</h3>", unsafe_allow_html=True)
+    st.markdown("<h5 style='text-align: left; font-family:montserrat'>Chest pain type</h3>", unsafe_allow_html=True)
     st.markdown("<p>Chest pain or discomfort caused when your heart muscle doesn't get enough oxygen-rich blood.</p>", unsafe_allow_html=True)
-    st.markdown("<h5 style='color: #2B2A4C;text-align: left; font-family:montserrat'>RestingBP</h3>", unsafe_allow_html=True)
+    st.markdown("<h5 style='text-align: left; font-family:montserrat'>RestingBP</h3>", unsafe_allow_html=True)
     st.markdown("<p>Resting blood pressure refers to the measurement of blood pressure when the body is at rest, typically in a seated or lying position and after a period of relaxation. Normal resting blood pressure typically falls below 120/80 mmHg</p>", unsafe_allow_html=True)
-    st.markdown("<h5 style='color: #2B2A4C;text-align: left; font-family:montserrat'>Oldpeak </h3>", unsafe_allow_html=True)
+    st.markdown("<h5 style='text-align: left; font-family:montserrat'>Oldpeak </h3>", unsafe_allow_html=True)
     st.markdown("<p>Oldpeak is a term used when doctors are checking the heart's health. They might ask you to exercise on a treadmill or bike while they monitor your heart. They're looking for any unusual changes on a graph called an electrocardiogram (ECG). One thing they look for is if a part of the graph dips down (depression) when you're exercising compared to when you're resting. This dip is called Oldpeak. If there's a big dip, it could mean your heart isn't getting enough blood, which could signal a problem like blocked arteries.</p>", unsafe_allow_html=True)
 
    
@@ -154,10 +154,10 @@ def HomePage():
 
 # Function to define the modeling page content
 def modeling_page():
-    st.markdown("<h1 style='text-align: CENTER; color: #2B2A4C;'>Modelling Section </h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: CENTER; '>Modelling Section </h1>", unsafe_allow_html=True)
     st.markdown('<hr>', unsafe_allow_html=True)
     
-    st.markdown("<h1 style='text-align: LEFT; color: #2B2A4C;'>Dataset Sample</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: LEFT; '>Dataset Sample</h1>", unsafe_allow_html=True)
     # st.sidebar.markdown('<br><br><br>', unsafe_allow_html= True)
     st.write(df[['Age', 'Sex', 'Cholesterol', 'MaxHR','ChestPainType', 'RestingBP', 'Oldpeak', 'ST_Slope', 'HeartDisease']])
 
@@ -226,7 +226,7 @@ if selected_page == "Modeling":
     
     if patient_name:
         if st.button('Press To Predict'):
-            st.markdown("<h4 style='color: #2B2A4C; text-align: left; font-family: montserrat;'>Model Report</h4>", unsafe_allow_html=True)
+            st.markdown("<h4 style=' text-align: left; font-family: montserrat;'>Model Report</h4>", unsafe_allow_html=True)
             predicted = model.predict(input_variables)
             st.toast('Predicted Successfully')
             st.image('check icon.png', width=100)
@@ -240,5 +240,5 @@ if selected_page == "Modeling":
     
     st.markdown('<hr>', unsafe_allow_html=True)
     
-    st.markdown("<h8 style = 'color: #2B2A4C; text-align: LEFT; font-family:montserrat'>Heart Disease MODEL BUILT BY Pheau Snipers</h8>",unsafe_allow_html=True)
+    st.markdown("<h8 style = ' text-align: LEFT; font-family:montserrat'>Heart Disease MODEL BUILT BY Pheau Snipers</h8>",unsafe_allow_html=True)
 
